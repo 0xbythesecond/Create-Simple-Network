@@ -1,59 +1,58 @@
 # Create Simple Network
+![Simple Network(1)](https://github.com/0xbythesecond/Create-Simple-Network/assets/23303634/bd9cb0cb-af62-46f1-9b31-ce8d3966be1e)
 
 
-Objective: Create a simple network that consist of two computers and a printer on each side of the router within Packet Tracer
 
-Step 1: Design the Network Topology
-        Open Packet Tracer and select a router from the available devices.
-        Drag the router onto the workspace.
-        Connect two computers and a printer to each side of the router using appropriate cables.
+## Objective:
+The objective of this lab is to configure a simple network with multiple devices connected through a router and switches.
 
-Step 2: Assign IP Addresses
-        For each device, click on it to access its configuration panel.
-        In the configuration panel, navigate to the "Desktop" tab.
-        Assign IP addresses to each device. For instance, use 192.168.1.1 for the first computer, 192.168.1.2 for the printer, and so on.
+### Topology Setup:
+- Open Packet Tracer and select the router, one switch, four computers, and two printers.
+- Drag and drop the devices onto the workspace.
+- Connect one switch to each side of the router using Ethernet cables.
+- Connect two computers and 1 printer to each switch.
 
-Step 3: Configure Router Interfaces
-        Access the router's command-line interface (CLI) by clicking on it.
-        Enter global configuration mode using the enable command and configure the router's interfaces with IP addresses.
-        For example, use interface gig0/0 and ip address 192.168.1.254 for the interface connected to the first set of devices.
+<p align=center><img src="https://github.com/0xbythesecond/Create-Simple-Network/assets/23303634/0bef1a0e-d3f6-4879-bdc9-81a0d8386f96" width="800" alt="packet tracer setup"/></p>
 
-Step 4: Set Up Static Routing
-        In the router's CLI, enter global configuration mode.
-        Use the ip route command to configure static routes. For instance, ip route 192.168.2.0 255.255.255.0 192.168.1.254 to route traffic from one network to the other.
 
-Step 5: Test Connectivity
-        Return to the simulation mode in Packet Tracer.
-        Open the command prompt or terminal for each device.
-        Ping devices on the opposite side of the router to verify connectivity.
+### Configuration of Router Interfaces:
+- Access the router's Command Line Interface (CLI) by clicking on it and selecting "Command Line Interface."
+       
+<p align=center><img src="https://github.com/0xbythesecond/Create-Simple-Network/assets/23303634/7e6e93dd-8834-4ce9-9abe-c23456220523" width="500" alt="select router cli"/>
 
-Step 6: Implement Basic Security
-        Still in the router's CLI, set passwords for security.
-        Use commands like enable secret and enable password to secure privileged and user EXEC modes.
+- First you will be prompted with 
+- Enter global configuration mode initially by using the `enable` (privileged EXEC mode) command and then to enter the global configuration mode by entering `configure terminal` or `conf t` for short.
+- Configure IP addresses for each router interface using the interface and ip address commands.
+- For example, interface gigabitethernet0/0 followed by ip address 192.168.1.1 255.255.255.0.
 
-Reflection:
-        Evaluate the effectiveness of the network design in terms of connectivity and security.
-        Consider any challenges faced during the configuration and how they were resolved.
+### Configuration of Switch (with Port Security):
+- Click on the switch to access its configuration panel.
+- Enable port security on the switch by setting the maximum number of allowed MAC addresses on each port using the switchport port-security maximum command.
+- Optionally, configure other port security features such as sticky MAC addresses using the switchport port-security mac-address sticky command.
+- Ensure that all ports on the switch are configured with port security using the switchport port-security command.
 
-Step 7: Documentation
-   - Create a document detailing the network configuration.
-   - Include IP addresses, router settings, and any security measures implemented.
+### Configuration of Computers and Printers:
+- Click on each computer and printer to access their configuration panels.
+- Assign IP addresses, subnet masks, default gateways, and DNS servers to each device.
+- Use IP addresses within the same subnet as the corresponding router interface.
+- Optionally, configure static MAC addresses on the computers and printers to ensure compatibility with port security.
 
-Step 8: Save and Share
-   - Save the Packet Tracer file for future reference or sharing.
-   - Share the file with others for review or collaboration.
+###  Testing Connectivity:
+- Return to the simulation mode in Packet Tracer.
+- Power on all devices.
+-  Test connectivity between computers and printers on both sides of the router using the `ping` command.
+- Attempt to connect unauthorized devices to switch ports to verify that port security is functioning as expected.
 
-Objective Review:
-  - Confirm that devices on different sides of the router can communicate successfully.
-  - Check that security measures are in place and effective for the network's purpose.
+### Reflection:
+- Reflect on the process of setting up the network.
+- Consider any challenges encountered and how they were resolved.
+- Evaluate the effectiveness of the network design and the implementation of port security in ensuring network security.
 
-    Final Reflection:
+### Documentation:
+- Document the network configuration, including IP addresses, router settings, switch configurations, and device connections.
+- Include any troubleshooting steps taken and their outcomes.
 
-    Reflect on the overall experience, considering the success of the network setup, any lessons learned, and improvements for future designs.
-
-    Conclusion:
-
-    The completed network should showcase functional connectivity between devices on different sides of the router, with documented 
-
-    configurations and basic security measures in place.
+### Conclusion:
+- The completed network should demonstrate successful communication between devices on each side of the router, with port security enabled on the switch to enhance network security.
+- The documentation serves as a reference for future network setups and troubleshooting.
 
